@@ -4,4 +4,9 @@
 ## GUIこんな感じ
 ![main](https://raw.githubusercontent.com/b1017034/disgaea_etna_counter/main/img/main.png)
 
+## build
+```
+pyinstaller main.py --onefile --noconsole
+```
+
 NYSL
