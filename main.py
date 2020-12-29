@@ -1,4 +1,7 @@
 import tkinter as tk
+from tkinter import ttk
+from ttkthemes.themed_tk import ThemedTk
+
 from const import stairs
 import math
 
@@ -57,58 +60,62 @@ if __name__ == '__main__':
         goal_common_and_rare(common_count, rare_count, legend_count)
 
     root = tk.Tk()
+    # Setting Theme
+    # s = ttk.Style()
+    # s.theme_use('scidgrey')
+
     # keep front
     root.attributes("-topmost", True)
 
     root.title("Disgaea Counter")
-    root.geometry("400x140")
+    root.minsize(width=400, height=140)
 
     # common
-    common_label = tk.Label(root, text="コモン")
+    common_label = ttk.Label(root, text="コモン")
     common_label.grid(column=0, row=0, padx=5, pady=5)
 
-    common_count_label = tk.Label(root, text=f"{common_count}")
+    common_count_label = ttk.Label(root, text=f"{common_count}")
     common_count_label.grid(column=0, row=1, padx=5, pady=5)
 
     # Count Button
-    common_count_button = tk.Button(text="count", width=10)
+    common_count_button = ttk.Button(text="count", width=10)
     common_count_button.bind("<Button-1>", count_common)
     common_count_button.grid(column=0, row=2, padx=5, pady=5)
 
     # rare
-    rare_label = tk.Label(root, text="レア")
+    rare_label = ttk.Label(root, text="レア")
     rare_label.grid(column=1, row=0, padx=5, pady=5)
 
-    rare_count_label = tk.Label(root, text=f"{rare_count}")
+    rare_count_label = ttk.Label(root, text=f"{rare_count}")
     rare_count_label.grid(column=1, row=1, padx=5, pady=5)
 
     # Count Button
-    rare_count_button = tk.Button(text="count", width=10)
+    rare_count_button = ttk.Button(text="count", width=10)
     rare_count_button.bind("<Button-1>", count_rare)
     rare_count_button.grid(column=1, row=2, padx=5, pady=5)
 
     # legend
-    legend_label = tk.Label(root, text="レジェンド")
+    legend_label = ttk.Label(root, text="レジェンド")
     legend_label.grid(column=2, row=0, padx=5, pady=5)
 
-    legend_count_label = tk.Label(root, text=f"{legend_count}")
+    legend_count_label = ttk.Label(root, text=f"{legend_count}")
     legend_count_label.grid(column=2, row=1, padx=5, pady=5)
 
-    legend_count_button = tk.Button(text="count", width=10)
+    legend_count_button = ttk.Button(text="count", width=10)
     legend_count_button.bind("<Button-1>", count_legend)
     legend_count_button.grid(column=2, row=2, padx=5, pady=5)
 
     # refresh
-    refresh_button = tk.Button(text="refresh", width=10)
+    refresh_button = ttk.Button(text="refresh", width=10)
     refresh_button.bind("<Button-1>", refresh)
     refresh_button.grid(column=1, row=3, padx=5, pady=5)
 
     # goal
-    goal_title_label = tk.Label(root, text="コモン装備レベル39まで")
+    goal_title_label = ttk.Label(root, text="コモン装備レベル39まで")
     goal_title_label.grid(column=3, row=0, padx=5, pady=5)
-    goal_common_only_label = tk.Label(root, text="コモン：13個")
+    goal_common_only_label = ttk.Label(root, text="コモン：13個")
     goal_common_only_label.grid(column=3, row=1, padx=5, pady=5)
-    goal_common_and_rare_label = tk.Label(root, text="レア：6個、コモン：1個")
+    goal_common_and_rare_label = ttk.Label(root, text="レア：6個、コモン：1個")
     goal_common_and_rare_label.grid(column=3, row=2, padx=5, pady=5)
 
     root.mainloop()
