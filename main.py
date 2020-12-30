@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-from ttkthemes.themed_tk import ThemedTk
 
 from const import stairs
 import math
